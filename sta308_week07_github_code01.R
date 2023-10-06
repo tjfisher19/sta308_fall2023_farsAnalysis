@@ -3,7 +3,7 @@
 ##  sta308_week07_github_code01.R
 ##
 ##  This code is a streamlined version of code that is
-##    similar to the results from Wednesday, Sep 28, 2022
+##    similar to the results from last week
 ##  We will start off class by running this code and discussing
 ##    all that it does.
 ##
@@ -11,7 +11,7 @@
 ##    specifically using the fromJSON() function
 ##    to fetch data from the NHTSA FARS API
 ## 2. Provides a function that will fetches all fatal
-##    crashes in the state of Ohio from 2014 to 2020
+##    crashes in the state of Ohio from 2014 to 2021
 ##
 
 ## Load necessary libraries
@@ -28,7 +28,7 @@ library(tidyverse)
 ## We are getting a list of crashes, with some details,
 ##   for all fatal crashes in the state of Ohio
 ## We use this function so we can lapply() over
-##   all years from 2014 to 2020.
+##   all years from 2014 to 2021.
 ##
 
 get_fatal_crashes_json <- function(year=2014) {
@@ -40,7 +40,7 @@ get_fatal_crashes_json <- function(year=2014) {
   fromJSON(site)
 }
 
-all_crashes_list <- lapply(2014:2020, get_fatal_crashes_json)
+all_crashes_list <- lapply(2014:2021, get_fatal_crashes_json)
 
 ##########
 ## Let's explore everything in all_crashes_list
@@ -121,7 +121,7 @@ county_year_data <- bind_rows(county_year_data_list)
 glimpse(county_year_data)
 View(county_year_data)
 
-## We now all the fatalities for Ohio from 2014 to 2020
+## We now all the fatalities for Ohio from 2014 to 2021
 ##   recording both the county and date of the crash
 ##
 
