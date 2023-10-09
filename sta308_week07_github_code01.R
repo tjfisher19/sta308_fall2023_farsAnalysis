@@ -94,8 +94,15 @@ glimpse(all_crashes_list[[1]]$Results[[1]])
 
 first_rec <- all_crashes_list[[1]]$Results[[1]] %>%
   slice(1)
+first_rec
 
+str_sub(first_rec$CrashDate, start=7, end=16)
+as.numeric(str_sub(first_rec$CrashDate, start=7, end=16))
 
+today()
+as.numeric(today())
+
+as_datetime(as.numeric(str_sub(first_rec$CrashDate, start=7, end=16)))
 
 #################################################
 ## Now we automate the process
