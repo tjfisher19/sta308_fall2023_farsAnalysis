@@ -101,6 +101,7 @@ as.numeric(str_sub(first_rec$CrashDate, start=7, end=16))
 
 today()
 as.numeric(today())
+as.numeric(ymd("0450-08-12"))
 
 as_datetime(as.numeric(str_sub(first_rec$CrashDate, start=7, end=16)))
 
